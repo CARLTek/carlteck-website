@@ -40,3 +40,15 @@ h5, h6, p, div, span, li {
   font-family: var(--font-body);
 }
 
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 25s linear infinite;
+}

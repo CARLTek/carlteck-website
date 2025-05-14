@@ -4,7 +4,7 @@ import BigImage from "../BigImage";
 
 const LandingSection: React.FC = () => {
   return (
-    <section className="mx-auto flex flex-col lg:flex-row items-center justify-between -mt-15 px-10 lg:px-20 py-20 lg:py-10 overflow-hidden">
+    <section className="mx-auto flex flex-col lg:flex-row items-center justify-between px-10 lg:px-20 py-20 lg:py-10 overflow-hidden">
       {/* Foreground Content */}
       <div className="relative z-10 w-full lg:w-1/2 text-center lg:text-left">
         <h5 className="text-lg font-medium text-gray-600 mb-2 pt-20 lg:pt-0">
@@ -17,11 +17,13 @@ const LandingSection: React.FC = () => {
           Innovating the future with smart, autonomous machines for real-world
           solutions.
         </div>
-        <AnimatedButton label="Explore Projects" href="/projects" />
+        <div className="flex justify-center lg:justify-start">
+          <AnimatedButton label="Explore Products" href="/products" />
+        </div>
       </div>
 
       {/* Robot Image */}
-      <BigImage link="/robot.png" />
+      <BigImage link="/robot.png" width={600} height={600} />
     </section>
   );
 };

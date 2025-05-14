@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { navItems } from "../data";
-import Logo from './Logo';
+import Link from "next/link";
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -38,18 +38,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav
-      className={`fixed  w-full z-50 transition-colors duration-300 overflow-x-hidden ${
-        scrolled
-          ? "bg-white/30 dark:bg-black backdrop-blur-sm"
-          : "bg-transparent"
-      }  `}
-    >
-      <div className="py-4 flex justify-between items-center px-10 lg:px-20">
-        {/* Logo */}
-        <Logo />
-
-        {/* Desktop Nav */}
+  
         <div>
           <ul className="flex space-x-8 font-medium text-black bg-gray-300 dark:bg-gray-600 dark:text-white px-6 py-3 rounded-md  relative">
             {navItems.map((item) => (
@@ -68,33 +57,6 @@ const Navbar: React.FC = () => {
             ></span>
           </ul>
         </div>
-
-        {/* Hamburger Icon for Mobile */}
-        {/* <div className="md:hidden">
-          <button
-            onClick={() => setMobileMenuOpen((prev) => !prev)}
-            className="text-black dark:text-white text-2xl"
-          >
-            {mobileMenuOpen ? "✕" : "☰"}
-          </button>
-        </div> */}
-      </div>
-
-      {/* Mobile Menu */}
-      {/* {mobileMenuOpen && (
-        <div className="md:hidden bg-white dark:bg-black px-6 py-4 space-y-4 text-right overflow-x-hidden">
-          {navItems.map((item) => (
-            <div
-              key={item.name}
-              onClick={() => handleNavigate(item.name, item.path)}
-              className="text-black dark:text-white cursor-pointer"
-            >
-              {item.name}
-            </div>
-          ))}
-        </div>
-      )} */}
-    </nav>
   );
 };
 

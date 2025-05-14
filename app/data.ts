@@ -63,3 +63,23 @@ export const projects = [
     image: "/snake-bot.jpg",
   },
 ];
+
+//used in navbar
+export const navItems = [
+  { name: "Home", path: "/" },
+  { name: "About", path: "/about" },
+  { name: "Products", path: "/products" },
+  { name: "Contact", path: "/contact" },
+];
+
+//used in about page
+export const teamMembers = [
+  { name: "Afnan Nadeem", title: "Business Development Manager", imageSrc: "/afnan.png" },
+  { name: "Hamza Anwar", title: "Robotics and AI Engineer", imageSrc: "/hamza.png" },
+  { name: "Ehtisham Ahmed", title: "Full-Stack Engineer", imageSrc: "/ehtisham.png" },
+  { name: "Ibrar Ali", title: "Frontend Developer", imageSrc: "/ibrar.png" },
+  { name: "Aqib Jamal", title: "Full-Stack Developer", imageSrc: "/aqib.png" },
+  { name: "Bawar Khan", title: "Field Assistant", imageSrc: "/Bawar.png" },
+  { name: "Usama Ahmed", title: "Sr. Robotics Engineer", imageSrc: "/Usama ahmed.png" },
+  { name: "Shahrukh Hussain", title: "Robotics Engineer", imageSrc: "/shahrukh.png" },
+];

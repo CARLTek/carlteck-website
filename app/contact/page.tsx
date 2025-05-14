@@ -8,12 +8,11 @@ export default function ContactPage() {
   return (
     <main>
       <Navbar />
-      <div className="max-w-[calc(100%-2in)] mx-auto">
-
+      <div className="px-10 lg:px-20">
         {/* Main Heading */}
         <PageHeading title="Contact Us" />
 
-        <div className="flex items-center justify-between py-20">
+        <div className="flex flex-col lg:flex-row items-center justify-between py-20">
           <ContactHeading />
           <ContactForm />
         </div>

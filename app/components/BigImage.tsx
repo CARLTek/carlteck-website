@@ -4,17 +4,20 @@ import Image from "next/image";
 
 interface BigImageProps {
   link: string;
+  width: number;
+  height: number;
+  className?: string; // optional class
 }
 
-const BigImage: React.FC<BigImageProps> = ({ link }) => {
+const BigImage: React.FC<BigImageProps> = ({ link, width, height, className }) => {
   return (
-    <div className="relative w-full md:w-1/2 flex justify-end">
+    <div className={`relative w-full md:w-1/2 flex justify-end ${className}`}>
       <Image
         src={link}
         alt={`${link} Image`}
-        width={800}
-        height={800}
-        className="w-full max-w-2xl"
+        width={width}
+        height={height}
+        className="rounded-xl"
         priority
       />
     </div>
