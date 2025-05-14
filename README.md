@@ -21,15 +21,15 @@ This is the official website for **CARL Teck** (Control, Automotive & Robotics L
 - **Deployment:** 
 
 ## 📁 Folder Structure
-.
-├── app/ # Next.js app structure
-│ ├── components/ # Reusable UI components
-│ ├── layout.tsx # App layout
-│ └── page.tsx # Homepage
-├── public/ # Static assets like images
-├── styles/ # Global styles (if any)
-├── data/ # Data for projects, team, etc.
-├── types/ # TypeScript types
-├── README.md # Project documentation
-└── package.json # Project config
+.  </br>
+├── app/ # Next.js app structure </br>
+│ ├── components/ # Reusable UI components  </br>
+│ ├── layout.tsx # App layout  </br>
+│ └── page.tsx # Homepage  </br>
+├── public/ # Static assets like images  </br>
+├── styles/ # Global styles (if any)  </br>
+├── data/ # Data for projects, team, etc.  </br>
+├── types/ # TypeScript types  </br>
+├── README.md # Project documentation  </br>
+└── package.json # Project config  </br>
 
