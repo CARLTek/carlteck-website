@@ -39,3 +39,27 @@ export const ourProducts = [
     icon: "/Vision.svg",
   },
 ];
+
+// used in /home/projectsSection
+export const projects = [
+  {
+    id: "ad-rover",
+    title: "AD ROVER",
+    image: "/ad-rover.jpg",
+  },
+  {
+    id: "smart-bot",
+    title: "SMART BOT",
+    image: "/smart-bot.jpg",
+  },
+  {
+    id: "waiter-bot",
+    title: "WAITER BOT",
+    image: "/waiter-bot.jpg",
+  },
+  {
+    id: "snake-bot",
+    title: "SNAKEBOT",
+    image: "/snake-bot.jpg",
+  },
+];

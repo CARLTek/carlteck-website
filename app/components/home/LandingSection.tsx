@@ -1,11 +1,10 @@
 import React from "react";
-import Image from "next/image";
 import AnimatedButton from "../AnimatedButton";
 import BigImage from "../BigImage";
 
 const LandingSection: React.FC = () => {
   return (
-    <section className="max-w-[90%] lg:max-w-[calc(100%-2in)] mx-auto flex flex-col-reverse lg:flex-row  items-center justify-between md:px-0 md:-mt-15 py-20 lg:py-12 overflow-hidden min-h-[600px]">
+    <section className="mx-auto flex flex-col lg:flex-row items-center justify-between -mt-15 px-10 lg:px-20 py-20 lg:py-10 overflow-hidden">
       {/* Foreground Content */}
       <div className="relative z-10 w-full lg:w-1/2 text-center lg:text-left">
         <h5 className="text-lg font-medium text-gray-600 mb-2 pt-20 lg:pt-0">

@@ -6,11 +6,11 @@ import AnimatedButton from "../AnimatedButton";
 
 const AboutSection: React.FC = () => {
   return (
-    <section className="max-w-[90%] lg:max-w-[calc(100%-2in)] mx-auto  flex flex-col-reverse lg:flex-col items-center justify-center text-center">
-      <div className=" mb-12 flex flex-col lg:flex-row items-center justify-between text-center gap-y-5 lg:text-left mt-15">
-        <h2 className="md:text-3xl font-bold ">About CARL</h2>
+    <section className="mx-auto  flex flex-col lg:flex-col items-center justify-center px-10 lg:px-20">
+      <div className="flex flex-col lg:flex-row items-center justify-between text-center lg:text-left gap-y-5 mb-12 mt-0 lg:mt-15">
+        <h2 className="w-full lg:w-1/5 text-3xl font-bold ">About CARL</h2>
 
-        <p className="w-full lg:w-[70%] ">
+        <p className="w-full lg:w-3/5 ">
           CARL (Control Automotive & Robotics Laboratory) is focused on
           developing cutting-edge robotic and automation technologies that push
           the boundaries of innovation and real-world application.
