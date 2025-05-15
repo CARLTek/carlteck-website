@@ -20,7 +20,7 @@ const ContactHeading = () => {
   ];
 
   return (
-    <div className=" mb-10">
+    <div className=" mb-10 text-center lg:text-left">
       <h2 className="text-3xl md:text-4xl font-bold mb-2">We’d love to hear from you</h2>
       <p className="text-gray-600 dark:text-gray-300 mb-6">
         Whether you have a question, a business inquiry, or want to collaborate — we’re here.
