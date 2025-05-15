@@ -74,6 +74,7 @@ export const navItems = [
 
 //used in about page
 export const teamMembers = [
+  { name: "Usman Nazeer", title: "Team Lead", imageSrc: "/Usama nazeer.png" },
   { name: "Afnan Nadeem", title: "Business Development Manager", imageSrc: "/afnan.png" },
   { name: "Hamza Anwar", title: "Robotics and AI Engineer", imageSrc: "/hamza.png" },
   { name: "Ehtisham Ahmed", title: "Full-Stack Engineer", imageSrc: "/ehtisham.png" },
