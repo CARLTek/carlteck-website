@@ -22,7 +22,7 @@ const EmbededVideo: React.FC<VideoProps> = ({ link }) => {
         >
           {/* Thumbnail (optional): you can use your own thumbnail image */}
           <Image
-            src="/thumbnail.jpg" // Make sure this image is in the public folder
+            src="/Thumbnail.jpg" // Make sure this image is in the public folder
             alt="Video thumbnail"
             layout="fill"
             objectFit="cover"
