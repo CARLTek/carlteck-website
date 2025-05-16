@@ -16,6 +16,7 @@ const TeamCard: React.FC<TeamCardProps> = ({ name, title, imageSrc }) => {
       </div>
       <h3 className="text-xl font-semibold">{name}</h3>
       <p className="text-sm">{title}</p>
+      
     </div>
   );
 };

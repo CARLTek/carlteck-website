@@ -27,7 +27,7 @@ export const ourProducts = [
     head: "SMART BOT",
     desc:
       "Introducing the SMART Bot—an interactive AI guide for malls and theme parks. It provides directions, information, and engaging conversations for all visitors, making it an educational and entertaining companion for both adults and children, elevating their experience.",
-    icon: "/Vision.svg",
+    icon: "/smart bot.png",
   },
   {
   head: "WaiterBot",
@@ -78,13 +78,13 @@ export const navItems = [
 //used in about page
 export const teamMembers = [
   { name: "Usman Nazeer", title: "Team Lead", imageSrc: "/Usama nazeer.png" },
-  { name: "Afnan Nadeem", title: "Business Development Manager", imageSrc: "/afnan.png" },
+  { name: "Afnan Nadeem", title: "Business Development Manager", imageSrc: "/Afnan.png" },
   { name: "Hamza Anwar", title: "Robotics and AI Engineer", imageSrc: "/hamza.png" },
-  { name: "Ehtisham Ahmed", title: "Full-Stack Engineer", imageSrc: "/ehtisham.png" },
-  { name: "Ibrar Ali", title: "Frontend Developer", imageSrc: "/ibrar.png" },
-  { name: "Aqib Jamal", title: "Full-Stack Developer", imageSrc: "/aqib.png" },
-  { name: "Bawar Khan", title: "Field Assistant", imageSrc: "/Bawar.png" },
-  { name: "Usama Ahmed", title: "Sr. Robotics Engineer", imageSrc: "/Usama ahmed.png" },
+  { name: "Ehtisham Ahmed", title: "Full-Stack Engineer", imageSrc: "/Ehtisham.png" },
+  { name: "Ibrar Ali", title: "Frontend Developer", imageSrc: "/Ibrar.png" },
+  { name: "Aqib Jamal", title: "Full-Stack Developer", imageSrc: "/Aqib.png" },
+  { name: "Usama Ahmed", title: "Sr. Robotics Engineer", imageSrc: "/usama ahmed.png" },
   { name: "Shahrukh Hussain", title: "Robotics Engineer", imageSrc: "/shahrukh.png" },
+  { name: "Bawar Khan", title: "Field Assistant", imageSrc: "/Bawar.png" },
 ];
 

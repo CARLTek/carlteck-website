@@ -7,7 +7,7 @@ import TeamCard from "./TeamCard";
 const TeamCardCarousel = () => {
   return (
     <div className="overflow-hidden">
-      <div className="animate-scroll whitespace-nowrap w-max flex">
+      <div className="animate-scroll hover:animate-none whitespace-nowrap w-max flex">
         {[...teamMembers, ...teamMembers].map((member, index) => (
           <div key={index} className="inline-block">
             <TeamCard {...member} />
