@@ -22,7 +22,7 @@ jobs:
     - name: Install Dependencies and Build
       run: |
         npm install
-        npm run build
+        npm run build && npm run export
 
     - name: Save and Use SSH Key
       run: |
@@ -32,7 +32,7 @@ jobs:
     - name: Deploy to VPS
       run: |
         rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no -i key.pem" \
-        build/ ${{ secrets.VPS_USERNAME }}@${{ secrets.VPS_IP }}:/var/www/carlteck/
+        out/ ${{ secrets.VPS_USERNAME }}@${{ secrets.VPS_IP }}:/var/www/carlteck/
 
     - name: Restart Nginx on VPS
       run: |
