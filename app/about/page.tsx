@@ -11,12 +11,9 @@ export default function AboutPage() {
   return (
     <main>
       <Navbar />
-      <div className="px-10 lg:px-20">
-        <PageHeading title="About Us" />
-        <OverviewSection />
-        <MissionVisionSection />
-        <FounderSection />
-      </div>
+      <OverviewSection />
+      <MissionVisionSection />
+      <FounderSection />
       <OurTeamSection />
       <CallToActionSection />
       <Footer />
