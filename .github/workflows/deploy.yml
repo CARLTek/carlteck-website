@@ -32,7 +32,8 @@ jobs:
     - name: Deploy to VPS
       run: |
         rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no -i key.pem" \
-        out/ ${{ secrets.VPS_USERNAME }}@${{ secrets.VPS_IP }}:/var/www/carlteck/
+        --exclude '.git' --exclude 'node_modules' \
+        . ${{ secrets.VPS_USERNAME }}@${{ secrets.VPS_IP }}:/var/www/carlteck/
 
     - name: Restart Nginx on VPS
       run: |
