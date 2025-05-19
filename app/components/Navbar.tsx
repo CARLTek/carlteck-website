@@ -1,42 +1,39 @@
 "use client";
+import React from "react";
 
-import { useEffect, useRef, useState } from "react";
-import { usePathname, useRouter } from "next/navigation";
-import { navItems } from "../data";
-import Logo from './Logo';
+import { useRouter } from "next/navigation";
 
-const Navbar: React.FC = () => {
+import { useEffect, useState } from "react";
+import Logo from "./Logo";
+import {
+  Menubar,
+  MenubarContent,
+  MenubarItem,
+  MenubarMenu,
+  MenubarSeparator,
+  MenubarShortcut,
+  MenubarTrigger,
+} from "@/components/ui/menubar";
+import { Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
+
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+
+const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [underlineStyle, setUnderlineStyle] = useState({});
+  const { setTheme } = useTheme();
   const router = useRouter();
-  const pathname = usePathname();
-  const navRefs = useRef<Record<string, HTMLLIElement | null>>({});
-
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  useEffect(() => {
-    const activeItem = navItems.find((item) => item.path === pathname);
-    if (activeItem) {
-      const el = navRefs.current[activeItem.name];
-      if (el) {
-        setUnderlineStyle({
-          width: `${el.offsetWidth}px`,
-          left: `${el.offsetLeft}px`,
-        });
-      }
-    }
-  }, [pathname]);
-
-  const handleNavigate = (name: string, path: string) => {
-    router.push(path);
-    setMobileMenuOpen(false);
-  };
-
   return (
     <nav
       className={`fixed  w-full z-50 transition-colors duration-300 overflow-x-hidden ${
@@ -50,50 +47,41 @@ const Navbar: React.FC = () => {
         <Logo />
 
         {/* Desktop Nav */}
-        <div>
-          <ul className="flex space-x-8 font-medium text-black bg-gray-300 dark:bg-gray-600 dark:text-white px-6 py-3 rounded-md  relative">
-            {navItems.map((item) => (
-              <li
-                key={item.name}
-                ref={(el) => (navRefs.current[item.name] = el)}
-                className="cursor-pointer pb-1 relative"
-                onClick={() => handleNavigate(item.name, item.path)}
-              >
-                {item.name}
-              </li>
-            ))}
-            <span
-              className="absolute bottom-0 h-[5px] rounded-t-lg bg-cyan-600 transition-all duration-300"
-              style={underlineStyle}
-            ></span>
-          </ul>
+        <div className="flex gap-4 items-center">
+          
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline" size="icon">
+                <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                <span className="sr-only">Toggle theme</span>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem onClick={() => setTheme("light")}>
+                Light
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setTheme("dark")}>
+                Dark
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+          <Menubar>
+            <MenubarMenu>
+              <MenubarTrigger>Menu</MenubarTrigger>
+              <MenubarContent className="mr-10 md:mr-20">
+                <MenubarItem onClick={() => router.push("/")}>Home</MenubarItem>
+                <MenubarSeparator />
+                <MenubarItem onClick={() => router.push("/about")}>About</MenubarItem>
+                <MenubarSeparator />
+                <MenubarItem onClick={() => router.push("/products")}>Products</MenubarItem>
+                <MenubarSeparator />
+                <MenubarItem onClick={() => router.push("/contact")}>Contact</MenubarItem>
+              </MenubarContent>
+            </MenubarMenu>
+          </Menubar>
         </div>
-
-        {/* Hamburger Icon for Mobile */}
-        {/* <div className="md:hidden">
-          <button
-            onClick={() => setMobileMenuOpen((prev) => !prev)}
-            className="text-black dark:text-white text-2xl"
-          >
-            {mobileMenuOpen ? "✕" : "☰"}
-          </button>
-        </div> */}
       </div>
-
-      {/* Mobile Menu */}
-      {/* {mobileMenuOpen && (
-        <div className="md:hidden bg-white dark:bg-black px-6 py-4 space-y-4 text-right overflow-x-hidden">
-          {navItems.map((item) => (
-            <div
-              key={item.name}
-              onClick={() => handleNavigate(item.name, item.path)}
-              className="text-black dark:text-white cursor-pointer"
-            >
-              {item.name}
-            </div>
-          ))}
-        </div>
-      )} */}
     </nav>
   );
 };
