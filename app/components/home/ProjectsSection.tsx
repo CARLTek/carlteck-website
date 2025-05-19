@@ -9,7 +9,7 @@ const ProjectSection = () => {
   const [active, setActive] = useState("ad-rover");
 
   return (
-    <section className="mx-auto flex flex-col lg:flex-row items-center justify-between py-10 px-10 lg:px-20 gap-20">
+    <section className="bg-[url(/productsbackground.png)] dark:bg-[url(/productsbackgrounddark.png)] bg-contain bg-opacity-10 mx-auto flex flex-col lg:flex-row items-center justify-between py-10 px-10 lg:px-20 gap-20">
       {/* Left Side */}
       <div className="text-center lg:text-left lg:w-1/2 pt-20 lg:pt-0">
         <h2 className="text-3xl font-bold mb-4">Explore Our Projects</h2>
