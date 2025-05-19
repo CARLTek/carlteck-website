@@ -28,6 +28,7 @@ export default function ProductsSection() {
             head={item.head}
             desc={item.desc}
             icon={item.icon}
+            className="w-30 md:w-70"
           />
         ))}
       </div>

@@ -21,19 +21,19 @@ export const ourProducts = [
     head: "Ad-Rover",
     desc:
       "AdRover: The ultimate advertising companion. With data-driven insights, AdRover enhances ad campaigns, optimizing reach and ROI across multiple platforms. Its intuitive analytics and strategic recommendations guide your brand to advertising success in today’s digital world.",
-    icon: "/Mission.svg",
+    icon: "/ad-rover-illus.png",
   },
   {
     head: "SMART BOT",
     desc:
       "Introducing the SMART Bot—an interactive AI guide for malls and theme parks. It provides directions, information, and engaging conversations for all visitors, making it an educational and entertaining companion for both adults and children, elevating their experience.",
-    icon: "/smart bot.png",
+    icon: "/smart-bot-illus.png",
   },
   {
   head: "WaiterBot",
   desc:
     "WaiterBot is a service robot for restaurants, capable of delivering food, taking orders, and interacting with customers via voice and touch. By handling routine tasks, it enables staff to focus on complex needs, improving efficiency and enhancing the overall dining experience.",
-  icon: "/Vision.svg",
+  icon: "/waiter-bot-illus.png",
 },
   {
     head: "SnakeBot",
