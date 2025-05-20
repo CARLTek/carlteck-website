@@ -39,7 +39,7 @@ export const ourProducts = [
     head: "SnakeBot",
     desc:
       "SnakeBot is a versatile robot inspired by the agility of snakes. With its flexible design and advanced sensors, it’s ideal for navigating tight spaces, making it perfect for surveillance, data collection, and search-and-rescue operations in challenging environments.",
-    icon: "/Vision.svg",
+    icon: "/snake-bot-illus.png",
   },
 ];
 
