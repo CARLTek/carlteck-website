@@ -24,7 +24,7 @@ const OverviewSection = () => {
         </div>
 
         <div className="w-full lg:w-1/2 aspect-video">
-          <EmbededVideo link="https://www.youtube.com/embed/84whkdGvxoI?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0" />
+          <EmbededVideo thumbnail="/Thumbnail.jpg" link="https://www.youtube.com/embed/9QEqCdJvFGU?si=kpeVO9eTg8UDdzQX" />
         </div>
       </div>
     </section>

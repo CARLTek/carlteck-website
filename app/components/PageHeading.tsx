@@ -8,7 +8,7 @@ const AboutPage: React.FC<pageTitleProps> = ({ title }) => {
         <h1 className=" py-20 flex justify-center items-center text-4xl sm:text-5xl font-bold ">
           {title}
         </h1>
-        <div className="border-t border-white w-full" />
+        <div className="border-t border-black dark:border-white w-full" />
     </div>
   );
 };

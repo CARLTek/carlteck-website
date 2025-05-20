@@ -19,7 +19,7 @@ const AboutSection: React.FC = () => {
         <AnimatedButton label="Learn More" href="http://localhost:3000/about" />
       </div>
 
-      <EmbededVideo link="https://www.youtube.com/embed/84whkdGvxoI?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0" />
+      <EmbededVideo thumbnail="/video-background-100.jpg" link="https://www.youtube.com/embed/x0FA93OpyFM?si=nqKfQaPjTPd3LL5o" />
     </section>
   );
 };

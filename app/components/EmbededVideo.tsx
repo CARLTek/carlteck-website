@@ -3,10 +3,11 @@ import React, { useState } from "react";
 import Image from "next/image";
 
 interface VideoProps {
+  thumbnail: string;
   link: string;
 }
 
-const EmbededVideo: React.FC<VideoProps> = ({ link }) => {
+const EmbededVideo: React.FC<VideoProps> = ({ thumbnail, link }) => {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
   const handlePlayClick = () => {
@@ -22,7 +23,7 @@ const EmbededVideo: React.FC<VideoProps> = ({ link }) => {
         >
           {/* Thumbnail (optional): you can use your own thumbnail image */}
           <Image
-            src="/Thumbnail.jpg" // Make sure this image is in the public folder
+            src={thumbnail}// Make sure this image is in the public folder
             alt="Video thumbnail"
             layout="fill"
             objectFit="cover"

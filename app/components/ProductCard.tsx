@@ -10,7 +10,7 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ head, desc, icon, className }) => {
   return (
-    <div className="flex flex-row gap-5 border-2 border-cyan-500 rounded-lg p-15 md:p-15 w-full lg:w-1/2 bg-gray-200 dark:bg-black shadow-md ">
+    <div className="flex flex-col-reverse md:flex-row gap-5 border-2 border-cyan-500 rounded-lg p-15 md:p-15 w-full lg:w-1/2 bg-gray-200 dark:bg-black shadow-md ">
    
       <div className="w-full">
         <h3 className="text-2xl font-semibold mb-4 text-black dark:text-gray-300">{head}</h3>
