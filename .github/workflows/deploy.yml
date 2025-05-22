@@ -21,27 +21,28 @@ jobs:
     - name: SSH into VPS and deploy
       run: |
         ssh -o StrictHostKeyChecking=no -i key.pem ${{ secrets.VPS_USERNAME }}@${{ secrets.VPS_IP }} << 'EOF'
-          # Go to deployment directory or create if doesn't exist
-          mkdir -p /var/www/carlteck
-          cd /var/www/carlteck
+          set -e
+          PROJECT_DIR=/var/www/carlteck
 
-          # If repo already exists, pull latest changes; otherwise, clone
-          if [ -d ".git" ]; then
-            git pull origin main
+          # Clone or pull latest code
+          if [ -d "$PROJECT_DIR/.git" ]; then
+            cd $PROJECT_DIR && git pull origin main
           else
-            git clone https://github.com/CARLTek/carlteck-website.git .
+            git clone https://github.com/CARLTek/carlteck-website.git $PROJECT_DIR
           fi
 
-          # Install Node and PM2 if not already installed
-          command -v node >/dev/null 2>&1 || curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - && sudo apt-get install -y nodejs
-          command -v pm2 >/dev/null 2>&1 || sudo npm install -g pm2
+          cd $PROJECT_DIR
 
-          # Install dependencies and build
+          # Ensure Node.js and PM2
+          command -v node >/dev/null || curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - && sudo apt install -y nodejs
+          command -v pm2 >/dev/null || sudo npm install -g pm2
+
+          # Install dependencies and build Next.js app
           npm install
           npm run build
 
-          # Restart with PM2
-          pm2 delete carlteck || true
-          pm2 start npm --name carlteck -- run start
+          # Restart server using PM2
+          pm2 start npm --name carlteck -- run start || pm2 restart carlteck
           pm2 save
+          sudo systemctl restart nginx
         EOF
