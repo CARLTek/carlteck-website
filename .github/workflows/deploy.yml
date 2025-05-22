@@ -10,45 +10,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Save SSH Key
-      run: |
-        echo "${{ secrets.VPS_SSH_PRIVATE_KEY }}" | base64 --decode > key.pem
-        chmod 600 key.pem
+      - name: Save SSH Key
+        run: |
+          echo "${{ secrets.VPS_SSH_PRIVATE_KEY }}" | base64 --decode > key.pem
+          chmod 600 key.pem
 
-    - name: SSH into VPS and deploy
-      run: |
-        ssh -o StrictHostKeyChecking=no -i key.pem ${{ secrets.VPS_USERNAME }}@${{ secrets.VPS_IP }} << 'EOF'
-          set -e
-          PROJECT_DIR=/var/www/carlteck
+      - name: SSH into VPS and deploy
+        run: |
+          ssh -o StrictHostKeyChecking=no -i key.pem ${{ secrets.VPS_USERNAME }}@${{ secrets.VPS_IP }} << 'EOF'
+            set -e
+            PROJECT_DIR=/root/carlteck-website
 
-          # Clone or pull latest code
-          if [ -d "$PROJECT_DIR/.git" ]; then
-            cd $PROJECT_DIR && git pull origin main
-          else
-            git clone https://github.com/CARLTek/carlteck-website.git $PROJECT_DIR
-          fi
+            cd $PROJECT_DIR
+            git pull origin main
 
-          cd $PROJECT_DIR
+            npm install
+            npm run build
 
-          # Ensure Node.js and PM2
-          command -v node >/dev/null || curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - && sudo apt install -y nodejs
-          command -v pm2 >/dev/null || sudo npm install -g pm2
+            pm2 delete carlteck || true
+            pm2 start npx --name carlteck --cwd $PROJECT_DIR -- serve out --listen 3000
 
-          # Install dependencies and build Next.js app
-          npm install
-          npm run build
-
-          # Stop existing app if running
-          pm2 delete carlteck || true
-
-          # Start new instance with correct working directory
-          pm2 start npx --name carlteck --cwd /var/www/carlteck -- serve out --listen 3000
-
-
-          pm2 save
-          sudo systemctl restart nginx
-        EOF
-
+            pm2 save
+            sudo systemctl restart nginx
+          EOF
