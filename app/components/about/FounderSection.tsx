@@ -18,7 +18,7 @@ const FounderSection = () => {
       </div>
 
       {/* Right Side Image */}
-      <BigImage link="/anayatullah.jpg" width={800} height={800}/>
+      <BigImage link="/Anayatullah.jpg" width={800} height={800}/>
 
     </section>
   );
