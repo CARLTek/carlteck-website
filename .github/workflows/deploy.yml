@@ -41,8 +41,13 @@ jobs:
           npm install
           npm run build
 
-          # Restart server using PM2
-          pm2 start npm --name carlteck -- run start || pm2 restart carlteck
+          # Stop existing app if running
+          pm2 delete carlteck || true
+
+          # Start new instance with correct working directory
+          pm2 start npm --name carlteck -- start --cwd $PROJECT_DIR
+
           pm2 save
           sudo systemctl restart nginx
         EOF
+
