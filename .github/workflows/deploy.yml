@@ -6,37 +6,42 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 20
-        cache: 'npm'
-
-    - name: Install Dependencies and Build
-      run: |
-        npm install
-        npm run build
-
-    - name: Save and Use SSH Key
+    - name: Save SSH Key
       run: |
         echo "${{ secrets.VPS_SSH_PRIVATE_KEY }}" | base64 --decode > key.pem
         chmod 600 key.pem
 
-    - name: Deploy to VPS
-      run: |
-        rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no -i key.pem" \
-        --exclude '.git' --exclude 'node_modules' \
-        out/ ${{ secrets.VPS_USERNAME }}@${{ secrets.VPS_IP }}:/var/www/carlteck/
-
-    - name: Restart Nginx on VPS
+    - name: SSH into VPS and deploy
       run: |
         ssh -o StrictHostKeyChecking=no -i key.pem ${{ secrets.VPS_USERNAME }}@${{ secrets.VPS_IP }} << 'EOF'
-          sudo systemctl restart nginx
+          # Go to deployment directory or create if doesn't exist
+          mkdir -p /var/www/carlteck
+          cd /var/www/carlteck
+
+          # If repo already exists, pull latest changes; otherwise, clone
+          if [ -d ".git" ]; then
+            git pull origin main
+          else
+            git clone https://github.com/CARLTek/carlteck-website.git .
+          fi
+
+          # Install Node and PM2 if not already installed
+          command -v node >/dev/null 2>&1 || curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - && sudo apt-get install -y nodejs
+          command -v pm2 >/dev/null 2>&1 || sudo npm install -g pm2
+
+          # Install dependencies and build
+          npm install
+          npm run build
+
+          # Restart with PM2
+          pm2 delete carlteck || true
+          pm2 start npm --name carlteck -- run start
+          pm2 save
         EOF
