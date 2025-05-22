@@ -45,7 +45,7 @@ jobs:
           pm2 delete carlteck || true
 
           # Start new instance with correct working directory
-          pm2 start npm --name carlteck --cwd /var/www/carlteck -- start
+          pm2 start npx --name carlteck --cwd /var/www/carlteck -- serve out -l 3000
 
 
           pm2 save
