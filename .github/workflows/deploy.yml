@@ -31,7 +31,7 @@ jobs:
             npm run build
 
             pm2 delete carlteck || true
-            pm2 start npx --name carlteck --cwd $PROJECT_DIR -- serve out --listen 3000
+            pm2 start npm --name "carlteck" -- start
 
             pm2 save
             sudo systemctl restart nginx
