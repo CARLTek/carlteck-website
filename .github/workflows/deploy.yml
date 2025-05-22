@@ -45,7 +45,8 @@ jobs:
           pm2 delete carlteck || true
 
           # Start new instance with correct working directory
-          pm2 start npm --name carlteck -- start --cwd /var/www/carlteck
+          pm2 start npm --name carlteck --cwd /var/www/carlteck -- start
+
 
           pm2 save
           sudo systemctl restart nginx
