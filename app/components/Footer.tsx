@@ -1,4 +1,6 @@
-import { Mail, Phone } from "lucide-react"; // Optional: install lucide-react for icons
+import { Mail, Phone } from "lucide-react";
+import React from "react";
+import Link from "next/link";
 
 const Footer: React.FC = () => {
   return (
@@ -35,9 +37,9 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Items Column */}
-          <div className="flex flex-col gap-6 ">
+          <div className="flex flex-col-reverse md:flex-col gap-6 ">
             {/* Quick Links */}
-            <ul className="space-y-1 flex gap-6  items-center">
+            <ul className="flex gap-6  items-center">
               <li>
                 <a href="/" className="hover:underline">
                   Home
@@ -48,7 +50,7 @@ const Footer: React.FC = () => {
                   About
                 </a>
               </li>
-               <li>
+              <li>
                 <a href="/products" className="hover:underline">
                   Products
                 </a>
@@ -63,7 +65,7 @@ const Footer: React.FC = () => {
             <div className="border-t border-white w-full" />
 
             {/* Projects */}
-            <ul className="space-y-1 flex gap-6 justify-center items-center ">
+            <ul className="space-y-1 flex gap-6 ">
               <li>Ad Rover</li>
               <li>Waiter Bot</li>
               <li>Smart Bot</li>
@@ -73,14 +75,50 @@ const Footer: React.FC = () => {
             <div className="border-t border-white w-full" />
 
             {/* Contact Info */}
-            <div className="space-y-2 flex gap-6 justify-center items-center ">
-              <div className="flex items-center gap-2">
-                <Phone size={16} />
-                <span>+92 300 1234567</span>
+            <div className=" flex flex-col md:flex-row gap-5 md:gap-10 justify-start md:justify-center items-start md:items-center ">
+              <div className="flex flex-col items-start gap-2">
+                <div>
+                  <span>CEO / Founder</span>
+                </div>
+                <div className="flex gap-2">
+                  <Phone size={16} />
+                  <Link
+                    href={"tel:+923438028866"}
+                    target="_blank"
+                    className="hover:underline"
+                  >
+                    <span>+92 343 8028866</span>
+                  </Link>
+                </div>
               </div>
-              <div className="flex items-center gap-2">
-                <Mail size={16} />
-                <span>info@bluechiplabs.pk</span>
+              <div className="flex flex-col items-start gap-2">
+                <div>
+                  <span>Business Development Manager</span>
+                </div>
+                <div className="flex gap-2">
+                  <Phone size={16} />
+                  <Link
+                    href={"tel:+923048332219"}
+                    target="_blank"
+                    className="hover:underline"
+                  >
+                    <span>+92 304 8332219</span>
+                  </Link>
+                </div>
+              </div>
+              <div className="flex flex-col items-start gap-2">
+                <div>
+                  <span>Email</span>
+                </div>
+                <div className="flex gap-2">
+                  <Mail size={16} />
+                  <Link
+                    href={"mailto:info@carlteck.com"}
+                    className="hover:underline"
+                  >
+                    <span>info@carlteck.com</span>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

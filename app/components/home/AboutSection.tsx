@@ -16,7 +16,7 @@ const AboutSection: React.FC = () => {
           the boundaries of innovation and real-world application.
         </p>
 
-        <AnimatedButton label="Learn More" href="http://localhost:3000/about" />
+        <AnimatedButton label="Learn More" href="/about" />
       </div>
 
       <EmbededVideo thumbnail="/video-background-100.jpg" link="https://www.youtube.com/embed/x0FA93OpyFM?si=nqKfQaPjTPd3LL5o" />
