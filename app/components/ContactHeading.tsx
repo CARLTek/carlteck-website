@@ -52,7 +52,7 @@ const ContactHeading = () => {
             </span>
             <div className="text-left">
               <p className="font-semibold text-black dark:text-white">
-                  <Link href={item.link}>{item.label}</Link>
+                  <Link href={item.link} className="hover:underline">{item.label}</Link>
               </p>
               <p className="text-sm text-gray-600 dark:text-gray-300">
                 {item.value}
