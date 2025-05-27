@@ -9,7 +9,7 @@ const ContactHeading = () => {
       icon: <Phone className="w-5 h-5" />,
       label: "CEO / Founder",
       value: "+92 343 8028866",
-      link: "tel:+923438028866", 
+      link: "tel:+923438028866",
     },
     {
       icon: <Phone className="w-5 h-5" />,
@@ -45,17 +45,19 @@ const ContactHeading = () => {
         {contactLinks.map((item) => (
           <div
             key={item.label}
-            className="flex items-center gap-3 p-3 rounded-md transition-colors hover:border-solid hover:border-1 hover:border-cyan-600 dark:hover:border-solid cursor-pointer"
+            className="flex items-center gap-3 p-3 rounded-md transition-colors border-solid border-1 border-transparent hover:border-solid hover:border-1 hover:border-cyan-600 dark:hover:border-solid cursor-pointer"
           >
             <span className="text-cyan-600 dark:text-cyan-400">
               {item.icon}
             </span>
             <div className="text-left">
               <p className="font-semibold text-black dark:text-white">
-                  <Link href={item.link} className="hover:underline">{item.label}</Link>
+                {item.label}
               </p>
               <p className="text-sm text-gray-600 dark:text-gray-300">
-                {item.value}
+                <Link href={item.link} className="hover:underline">
+                  {item.value}
+                </Link>
               </p>
             </div>
           </div>
