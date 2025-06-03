@@ -13,6 +13,10 @@ export default function GallerySection() {
     { type: "image", src: "/gallery/off1.jpeg" },
     { type: "image", src: "/gallery/off2.jpeg" },
     { type: "image", src: "/gallery/off3.jpeg" },
+    { type: "image", src: "/gallery/work1.jpeg" },
+    { type: "image", src: "/gallery/work2.jpeg" },
+    { type: "image", src: "/gallery/work3.jpeg" },
+    { type: "video", src: "/gallery/work4.mp4" },
   ];
 
   const mediaSet3: { type: "image" | "video"; src: string }[] = [

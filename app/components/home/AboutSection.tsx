@@ -19,7 +19,15 @@ const AboutSection: React.FC = () => {
         <AnimatedButton label="Learn More" href="/about" />
       </div>
 
-      <EmbededVideo thumbnail="/video-background-100.jpg" link="https://www.youtube.com/embed/x0FA93OpyFM?si=nqKfQaPjTPd3LL5o" />
+      <video
+        controls
+        preload="metadata"
+        className="w-full h-full object-cover rounded-lg"
+        poster="/video-background-100.jpg"
+      >
+        <source src="/gallery/main-video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
     </section>
   );
 };
