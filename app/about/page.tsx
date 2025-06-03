@@ -6,6 +6,9 @@ import FounderSection from "../components/about/FounderSection";
 import OurTeamSection from "../components/about/OurTeamSection";
 import CallToActionSection from "../components/home/CallToActionSection";
 import Footer from "../components/Footer";
+import GallerySwiper from '../components/GallerySwiper';
+import GalleryPromoSection from "../components/home/GalleryPromoSection";
+
 
 export default function AboutPage() {
   return (
@@ -15,6 +18,7 @@ export default function AboutPage() {
       <MissionVisionSection />
       <FounderSection />
       <OurTeamSection />
+      <GalleryPromoSection />
       <CallToActionSection />
       <Footer />
     </main>
