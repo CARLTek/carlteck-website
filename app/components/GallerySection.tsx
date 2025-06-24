@@ -34,46 +34,10 @@ export default function GallerySection() {
   ];
 
   return (
-    <div className="px-10 lg:px-20 bg-no-repeat pb-20">
+    <div className="px-10 lg:px-20 bg-no-repeat pb-20 dr-screen">
       <PageHeading title="Our Gallery" />
 
       {/* Section 1 */}
-      <div className="flex flex-col lg:flex-row gap-25 lg:gap-10 justify-end items-center pt-30">
-        <div className="w-full lg:w-1/2 space-y-6 text-center lg:text-left">
-          <h2 className="text-3xl font-bold">
-            Ad Rover Deployed at DHA Central Park – Quetta Eats Festival 2025
-          </h2>
-          <p>
-            Our team successfully deployed the Ad Rover at DHA Central Park
-            during the Quetta Eats Festival 2025. We had the honor of meeting
-            the Administrator of DHA Quetta, who appreciated the innovation and
-            showed great interest in our project.
-          </p>
-        </div>
-        <div className="w-full lg:w-1/2">
-          <GallerySwiper media={mediaSet1} />
-        </div>
-      </div>
-
-      {/* Section 2 */}
-      <div className="flex flex-col-reverse lg:flex-row gap-25 lg:gap-10 justify-end items-center pt-30">
-        <div className="w-full lg:w-1/2">
-          <GallerySwiper media={mediaSet2} />
-        </div>
-        <div className="w-full lg:w-1/2 space-y-6 text-center lg:text-left">
-          <h2 className="text-3xl font-bold">
-            Strategic Discussions and Enhancements in Ad Rover Development
-          </h2>
-          <p>
-            Highlighting our team’s technical discussions and collaborative
-            efforts to improve the Ad Rover. We focused on identifying key
-            enhancements, addressing technical challenges, and ensuring the
-            system is optimized for real-world deployment and user engagement.
-          </p>
-        </div>
-      </div>
-
-      {/* Section 3 */}
       <div className="flex flex-col lg:flex-row gap-25 lg:gap-10 justify-end items-center pt-30">
         <div className="w-full lg:w-1/2 space-y-6 text-center lg:text-left">
           <h2 className="text-3xl font-bold">
@@ -90,6 +54,42 @@ export default function GallerySection() {
         </div>
         <div className="w-full lg:w-1/2">
           <GallerySwiper media={mediaSet3} />
+        </div>
+      </div>
+
+      {/* Section 2 */}
+      <div className="flex flex-col-reverse lg:flex-row gap-25 lg:gap-10 justify-end items-center pt-30">
+        <div className="w-full lg:w-1/2">
+          <GallerySwiper media={mediaSet1} />
+        </div>
+        <div className="w-full lg:w-1/2 space-y-6 text-center lg:text-left">
+          <h2 className="text-3xl font-bold">
+            Ad Rover Deployed at DHA Central Park – Quetta Eats Festival 2025
+          </h2>
+          <p>
+            Our team successfully deployed the Ad Rover at DHA Central Park
+            during the Quetta Eats Festival 2025. We had the honor of meeting
+            the Administrator of DHA Quetta, who appreciated the innovation and
+            showed great interest in our project.
+          </p>
+        </div>
+      </div>
+
+      {/* Section 3 */}
+      <div className="flex flex-col lg:flex-row gap-25 lg:gap-10 justify-end items-center pt-30">
+        <div className="w-full lg:w-1/2 space-y-6 text-center lg:text-left">
+          <h2 className="text-3xl font-bold">
+            Strategic Discussions and Enhancements in Ad Rover Development
+          </h2>
+          <p>
+            Highlighting our team’s technical discussions and collaborative
+            efforts to improve the Ad Rover. We focused on identifying key
+            enhancements, addressing technical challenges, and ensuring the
+            system is optimized for real-world deployment and user engagement.
+          </p>
+        </div>
+        <div className="w-full lg:w-1/2">
+          <GallerySwiper media={mediaSet2} />
         </div>
       </div>
     </div>

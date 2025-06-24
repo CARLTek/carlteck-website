@@ -7,7 +7,7 @@ import AnimatedButton from "../AnimatedButton";
 const AboutSection: React.FC = () => {
   return (
     <section className="bg-[url(/aboutbackground.png)] dark:bg-[url(/aboutbackgroundblack.png)] bg-no-repeat bg-contain lg:bg-cover mx-auto  flex flex-col lg:flex-col items-center justify-center px-10 lg:px-20">
-      <div className="flex flex-col lg:flex-row items-center justify-between text-center lg:text-left gap-y-5 mb-12 mt-0 lg:mt-15">
+      <div className="flex flex-col lg:flex-row items-center justify-between text-center lg:text-left  mb-12 lg:mt-15">
         <h2 className="w-full lg:w-1/5 text-3xl font-bold ">About CARL</h2>
 
         <p className="w-full lg:w-3/5 ">

@@ -189,3 +189,11 @@ h5, h6, p, div, span, li {
     margin-top: 0 !important;
   }
 }
+@media (min-width: 3500px) {
+  .dr-screen {
+    padding-inline: 800px !important;
+  }
+  .dr-screen-bg {
+    background-image: none !important;
+  }
+}

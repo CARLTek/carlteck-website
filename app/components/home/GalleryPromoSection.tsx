@@ -18,7 +18,7 @@ const galleryImages = [
 export default function GalleryPromoSection() {
 
   return (
-    <section className="w-full px-10 lg:px-20 py-16">
+    <section className="w-full px-10 lg:px-20 py-16 ">
       <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-20">
         {/* Swiper Left Side */}
         <div className="w-full lg:w-1/2 flex justify-center">

@@ -5,7 +5,7 @@ import { missionVisionData } from "../../data";
 
 const MissionVisionSection = () => {
   return (
-    <section className="bg-[url(/mvbackground.png)] dark:bg-[url(/mvbackgrounddark.png)] bg-contain bg-no-repeat  py-16 px-10 lg:px-20">
+    <section className="bg-[url(/mvbackground.png)] dark:bg-[url(/mvbackgrounddark.png)] bg-contain bg-no-repeat  py-16 px-10 lg:px-20 dr-screen-bg dr-screen">
       {/* Main Heading */}
       <h2 className="text-4xl font-bold text-center mb-10 md:mb-25">Mission & Vision</h2>
 

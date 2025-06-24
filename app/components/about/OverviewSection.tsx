@@ -6,7 +6,7 @@ import PageHeading from "../PageHeading";
 
 const OverviewSection = () => {
   return (
-    <section className="bg-[url(/overview.png)] dark:bg-[url(/overviewblack.png)] bg-cover bg-no-repeat px-10 lg:px-20 ">
+    <section className="bg-[url(/overview.png)] dark:bg-[url(/overviewblack.png)] bg-cover bg-bottom bg-no-repeat px-10 lg:px-20 dr-screen ">
       <PageHeading title="About Us" />
 
       <div className="flex flex-col lg:flex-row items-center justify-between gap-15  py-12">

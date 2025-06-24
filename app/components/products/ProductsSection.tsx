@@ -4,7 +4,7 @@ import PageHeading from "../PageHeading";
 
 export default function ProductsSection() {
   return (
-    <div className="px-10 lg:px-20 bg-[url(/overview.png)] dark:bg-[url(/overviewblack.png)] bg-cover bg-no-repeat">
+    <div className="px-10 lg:px-20 bg-[url(/overview.png)] dark:bg-[url(/overviewblack.png)] bg-cover bg-no-repeat bg-bottom  dr-screen">
       <PageHeading title="Our Products" />
 
       {/* Ad-Rover & Smart Bot*/}

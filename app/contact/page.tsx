@@ -7,7 +7,7 @@ export default function ContactPage() {
   return (
     <main>
       <Navbar />
-      <div className="px-10 lg:px-20">
+      <div className="px-10 lg:px-20 dr-screen" >
         <PageHeading title="Contact Us" />
         <ContactFormSection />
       </div>
