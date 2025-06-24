@@ -183,3 +183,9 @@ h5, h6, p, div, span, li {
     @apply bg-background text-foreground;
   }
 }
+
+@media (min-width: 1000px) and (max-width: 1400px) {
+  .no-margin {
+    margin-top: 0 !important;
+  }
+}
