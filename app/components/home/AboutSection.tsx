@@ -25,7 +25,7 @@ const AboutSection: React.FC = () => {
         className="w-full h-full object-cover rounded-lg"
         poster="/video-background-100.jpg"
       >
-        <source src="public/gallery/main-video.MP4" type="video/mp4" />
+        <source src="/gallery/main-video.MP4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </section>
