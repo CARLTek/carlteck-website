@@ -39,7 +39,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed w-full z-100   px-5 md:px-20`}>
+    <nav className={`fixed w-full z-10   px-5 md:px-20`}>
       <div
         className={` flex justify-between items-center px-4 py-3 mt-2 md:py-4 rounded-xl backdrop-blur-md bg-white/50 dark:bg-white/10`}
       >
@@ -55,7 +55,7 @@ const Navbar = () => {
             <Menubar>
               <MenubarMenu>
                 <MenubarTrigger>Menu</MenubarTrigger>
-                <MenubarContent align="end">
+                <MenubarContent align="end" className="z-20">
                   {navLinks.map((item, idx) => (
                     <div key={idx}>
                       <MenubarItem onClick={() => router.push(item.href)}>
