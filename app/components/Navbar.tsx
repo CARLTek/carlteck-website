@@ -2,6 +2,7 @@
 
 import { useTheme } from "next-themes";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 import Logo from "./Logo";
 import { Button } from "@/components/ui/button";
@@ -22,7 +23,9 @@ import {
 import { Moon, Sun } from "lucide-react";
 
 const Navbar = () => {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme } = useTheme(); 
+  const router = useRouter();
+
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
@@ -67,7 +70,7 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Menu */}
-          <NavigationMenu className="hidden md:flex ">
+          <NavigationMenu className="hidden md:flex p-20">
             <NavigationMenuList>
               {navLinks.map((item, idx) => (
                 <NavigationMenuItem key={idx}>
