@@ -5,7 +5,7 @@ interface pageTitleProps {
 const AboutPage: React.FC<pageTitleProps> = ({ title }) => {
   return (
     <div>
-        <h1 className=" py-20 flex justify-center items-center text-4xl sm:text-5xl font-bold ">
+        <h1 className=" pt-30 pb-20 flex justify-center items-center text-4xl sm:text-5xl font-bold ">
           {title}
         </h1>
         <div className="border-t border-black dark:border-white w-full" />
