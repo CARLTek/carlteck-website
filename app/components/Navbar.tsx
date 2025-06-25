@@ -70,7 +70,7 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Menu */}
-          <NavigationMenu className="hidden md:flex p-20">
+          <NavigationMenu className="hidden md:flex ">
             <NavigationMenuList>
               {navLinks.map((item, idx) => (
                 <NavigationMenuItem key={idx}>
