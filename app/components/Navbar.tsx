@@ -1,7 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 
@@ -24,20 +22,7 @@ import {
 import { Moon, Sun } from "lucide-react";
 
 const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false);
-  const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
-  const router = useRouter();
-
-  useEffect(() => {
-    setMounted(true);
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  if (!mounted) return null;
-
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
@@ -51,27 +36,16 @@ const Navbar = () => {
   ];
 
   return (
-    <nav
-      className={`fixed w-full z-50 transition-colors duration-300 px-4 md:px-10`}
-    >
+    <nav className={`fixed w-full z-100   px-10 md:px-20`}>
       <div
-        className={`mx-auto mt-2 flex justify-between items-center px-4 py-3 md:py-4 rounded-xl backdrop-blur-md transition-all ${
-          scrolled
-            ? "bg-black/20 dark:bg-white/10 shadow-sm"
-            : "bg-black/10 dark:bg-white/5"
-        }`}
+        className={` flex justify-between items-center px-4 py-3 mt-2 md:py-4 rounded-xl backdrop-blur-md bg-white/50 dark:bg-white/10`}
       >
         {/* Logo */}
         <Logo />
 
         {/* Right Side */}
         <div className="flex items-center gap-3">
-          {/* Theme Toggle */}
-          <Button variant="outline" size="icon" onClick={toggleTheme}>
-            <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-            <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-            <span className="sr-only">Toggle theme</span>
-          </Button>
+          
 
           {/* Mobile Menu */}
           <div className="md:hidden">
@@ -93,7 +67,7 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Menu */}
-          <NavigationMenu className="hidden md:flex">
+          <NavigationMenu className="hidden md:flex ">
             <NavigationMenuList>
               {navLinks.map((item, idx) => (
                 <NavigationMenuItem key={idx}>
@@ -104,7 +78,14 @@ const Navbar = () => {
               ))}
             </NavigationMenuList>
           </NavigationMenu>
+          {/* Theme Toggle */}
+          <Button variant="outline" size="icon" onClick={toggleTheme}>
+            <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+            <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+            <span className="sr-only">Toggle theme</span>
+          </Button>
         </div>
+        
       </div>
     </nav>
   );
