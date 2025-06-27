@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { ChevronUp, ChevronDown, Megaphone, Code2, Cpu } from "lucide-react";
+import { ChevronUp, ChevronDown, Megaphone, Code2, Cpu, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 const teams = {
@@ -8,19 +8,19 @@ const teams = {
     {
       name: "Usama Nazeer",
       role: "Team Lead",
-      image: "/dummy1.jpg",
+      image: "/usama nazeer.png",
       description:
-        "Helloooo world.Helloooo world.Helloooo world.Helloooo world.Helloooo world.",
+        "Usama Nazeer holds an MBA in Marketing and has studied at BUITEMS. With strong expertise in digital marketing, he currently leads the Marketing Team at CARL TECK.",
       socials: {
-        linkedin: "#",
+        linkedin: "https://www.linkedin.com/in/usama-nazeer-146733167/",
       },
     },
     {
       name: "Afnan Nadeem",
       role: "Business Development Manager",
-      image: "/dummy2.jpg",
+      image: "/Afnan.png",
       description:
-        "Helloooo world.Helloooo world.Helloooo world.Helloooo world.Helloooo world..",
+        "",
       socials: {
         linkedin: "#",
       },
@@ -28,9 +28,9 @@ const teams = {
     {
       name: "Bawar Khan",
       role: "Field Assistant",
-      image: "/bawar-khan.jpg",
+      image: "/Bawar.png",
       description:
-        "Helloooo world.Helloooo world.Helloooo world.Helloooo world.Helloooo world..",
+        "",
       socials: {
         linkedin: "#",
       },
@@ -40,9 +40,9 @@ const teams = {
     {
       name: "Ehtisham Ahmed",
       role: "Sr. Full-Stack Engineer",
-      image: "/ehtisham-ahmed.jpg",
+      image: "/Ehtisham.png",
       description:
-        "Helloooo world.Helloooo world.Helloooo world.Helloooo world.Helloooo world.",
+        "Ehtisham Ahmed is a Senior Full-Stack Developer at CARL TECK with 5 years of industry experience. He holds a BS in Computer Science from BUITEMS.",
       socials: {
         linkedin: "https://www.linkedin.com/in/ehtishamahmed/",
       },
@@ -50,9 +50,9 @@ const teams = {
     {
       name: "Ibrar Ali",
       role: "Full-Stack Developer",
-      image: "/ibrar-ali.jpg",
+      image: "/Ibrar.png",
       description:
-        "One of the most prestigious programmer in the world",
+        "Ibrar Ali is a full-stack developer at CARL TECK. He has experience working with startups and has also contributed to projects at DHA Quetta. He completed his BSCS from BUITEMS.",
       socials: {
         linkedin: "https://www.linkedin.com/in/ibrarli/",
       },
@@ -60,9 +60,9 @@ const teams = {
     {
       name: "Aqib Jamal",
       role: "ML Engineer",
-      image: "/aqib-jamal.jpeg",
+      image: "/Aqib.png",
       description:
-        "Hello",
+        "Aqib Jamal is a Machine Learning Engineer at CARL TECK. He has worked on numerous ML projects and holds a BSCS degree from BUITEMS.",
       socials: {
         linkedin: "https://www.linkedin.com/in/aqib-jamal-252802289/",
       },
@@ -72,29 +72,29 @@ const teams = {
     {
       name: "Hamza Anwar",
       role: "Robotics and AI Engineer",
-      image: "/dummy1.jpg",
+      image: "/hamza.png",
       description:
-        "Helloooo world.Helloooo world.Helloooo world.Helloooo world.Helloooo world.",
+        "Hamza Anwar is a Senior Robotics and AI Engineer at CARL TECK with 10 years of industry experience. He holds an MS in Electronics Engineering from BUITEMS",
       socials: {
         linkedin: "https://www.linkedin.com/in/hamza-anwar-32454a22b/",
       },
     },
     {
-      name: "Usama Ahmed",
+      name: "Osama Ahmed",
       role: "Sr. Robotics Engineer",
-      image: "/dummy2.jpg",
+      image: "/usama ahmed.png",
       description:
-        "Helloooo world.Helloooo world.Helloooo world.Helloooo world.Helloooo world..",
+        "Osama Ahmed is a Senior Robotics Engineer at CARL TECK. He has worked with PTCL, VIVO, and Elektro Control Industries with 10 years of experience. He holds an MS in Electronics Engineering from BUITEMS.",
       socials: {
-        linkedin: "#",
+        linkedin: "https://www.linkedin.com/in/osama-ahmed-1163821a5/",
       },
     },
     {
       name: "Shahrukh Hussain",
       role: "Robotics Engineer",
-      image: "/shahrukh-hussain.jpeg",
+      image: "/shahrukh.png",
       description:
-        "Washal",
+        "Shahrukh Hussain is a Robotics Engineer at CARL TECK. He holds a BS in Electronics Engineering from BUITEMS.",
       socials: {
         linkedin: "https://www.linkedin.com/in/shahrukhh442/",
       },
@@ -127,7 +127,7 @@ export default function TeamSection() {
   };
 
   return (
-    <section className="bg-black text-white min-h-screen flex flex-col lg:flex-row justify-between items-center gap-10 px-10 lg:px-20">
+    <section className=" flex flex-col lg:flex-row justify-between items-center gap-5 px-10 lg:px-20 py-10">
       <div className="w-full lg:w-1/2 text-center lg:text-left ">
         <h2 className="text-4xl font-bold mb-4">Our Team</h2>
         <p className="text-sm mb-15">
@@ -150,30 +150,32 @@ export default function TeamSection() {
                 activeTeam === team ? "bg-cyan-600" : "border-cyan-600"
               }`}
             >
-              <span className="text-white">{teamIcons[team]}</span>
-              <span className="text-left capitalize">{team} Team</span>
+              <span className="text-black dark:text-white">{teamIcons[team]}</span>
+              <span className="text-left  capitalize ">{team} Team</span>
             </button>
           ))}
         </div>
       </div>
 
-      <div className="w-full lg:w-2/3 flex flex-row items-center justify-center gap-6 relative">
-        <div className="flex flex-col items-center gap-4">
+      <div className="w-full lg:w-2/3 flex flex-col lg:flex-row items-center justify-end gap-6 relative">
+        <div className="flex flex-row lg:flex-col items-center gap-4">
           <button onClick={handlePrev}>
-            <ChevronUp />
+            <ChevronUp className="hidden lg:block"/>
+            <ChevronLeft className="lg:hidden" />
           </button>
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-row lg:flex-col gap-2">
             {currentTeam.map((_, i) => (
               <div
                 key={i}
                 className={`w-2 h-2 rounded-full ${
-                  i === activeIndex ? "bg-cyan-500" : "bg-white"
+                  i === activeIndex ? "bg-cyan-500" : "bg-gray-500 dark:bg-white"
                 }`}
               ></div>
             ))}
           </div>
           <button onClick={handleNext}>
-            <ChevronDown />
+            <ChevronDown className="hidden lg:block"/>
+            <ChevronRight className="lg:hidden" />
           </button>
         </div>
 
@@ -182,7 +184,7 @@ export default function TeamSection() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
-          className="relative group overflow-hidden rounded-xl w-[600px] h-[600px] bg-gray-800 shadow-lg"
+          className="relative group overflow-hidden rounded-xl w-auto h-auto md:w-[600px] md:h-[600px] bg-gray-800 border-2 border-cyan-500 shadow-lg"
         >
           <img
             src={member.image}
@@ -202,7 +204,7 @@ export default function TeamSection() {
               href={member.socials.linkedin}
               target="_blank"
               rel="noreferrer"
-              className="bg-cyan-600/50 w-10 h-10 flex justify-center z-100 items-center rounded-sm"
+              className="bg-cyan-600/50 text-white w-10 h-10 flex justify-center z-100 items-center rounded-sm"
             >
               in
             </a>

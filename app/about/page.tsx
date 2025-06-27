@@ -16,8 +16,7 @@ export default function AboutPage() {
       <OverviewSection />
       <MissionVisionSection />
       <FounderSection />
-      <OurTeamSection />
-      {/*<TeamSection />*/}
+      <TeamSection />
       <GalleryPromoSection />
       <CallToActionSection />
       <Footer />

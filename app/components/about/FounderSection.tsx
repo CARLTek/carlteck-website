@@ -6,6 +6,9 @@ import BigImage from "../BigImage";
 const FounderSection = () => {
   return (
     <section className="flex flex-col md:flex-row items-center justify-between gap-10  py-16 px-10 lg:px-20 dr-screen">
+       {/* Right Side Image */}
+      <BigImage link="/AnayatUllah.jpg" width={800} height={800}/>
+      
       {/* Left Side Content */}
       <div className="md:w-1/2 space-y-4 text-center md:text-left">
         <h5 className="text-cyan-500 text-sm uppercase tracking-widest">Our Founder & CEO</h5>
@@ -17,8 +20,7 @@ const FounderSection = () => {
         </p>
       </div>
 
-      {/* Right Side Image */}
-      <BigImage link="/AnayatUllah.jpg" width={800} height={800}/>
+     
 
     </section>
   );
