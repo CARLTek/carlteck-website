@@ -7,7 +7,7 @@ const LandingSection: React.FC = () => {
 <section className="bg-[url('/landingline.png')] dark:bg-[url('/landinglinedark.png')] dr-screen bg-cover bg-bottom bg-no-repeat mx-auto flex flex-col lg:flex-row items-center justify-between px-10 lg:px-20 py-20 lg:py-10 overflow-hidden w-full ">
       {/* Foreground Content */}
       <div className="relative z-10 w-full lg:w-1/2 text-center lg:text-left">
-        <h5 className="text-lg font-medium text-gray-600 mb-2 pt-20 lg:pt-0">
+        <h5 className="text-lg font-medium mb-2 pt-20 lg:pt-0">
           We are the pioneers of
         </h5>
         <h1 className="text-4xl text-black-700 sm:text-5xl font-bold leading-tight mb-4">
