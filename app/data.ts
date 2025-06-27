@@ -88,3 +88,101 @@ export const teamMembers = [
   { name: "Bawar Khan", title: "Field Assistant", imageSrc: "/Bawar.png" },
 ];
 
+export const teams = {
+  marketing: [
+    {
+      name: "Usama Nazeer",
+      role: "Team Lead",
+      image: "/usama nazeer.png",
+      description:
+        "Usama Nazeer holds an MBA in Marketing and has studied at BUITEMS. With strong expertise in digital marketing, he currently leads the Marketing Team at CARL TECK.",
+      socials: {
+        linkedin: "https://www.linkedin.com/in/usama-nazeer-146733167/",
+      },
+    },
+    {
+      name: "Afnan Nadeem",
+      role: "Business Development Manager",
+      image: "/Afnan.png",
+      description:
+        "",
+      socials: {
+        linkedin: "#",
+      },
+    },
+    {
+      name: "Bawar Khan",
+      role: "Field Assistant",
+      image: "/Bawar.png",
+      description:
+        "",
+      socials: {
+        linkedin: "#",
+      },
+    },
+  ],
+  software: [
+    {
+      name: "Ehtisham Ahmed",
+      role: "Sr. Full-Stack Engineer",
+      image: "/Ehtisham.png",
+      description:
+        "Ehtisham Ahmed is a Senior Full-Stack Developer at CARL TECK with 5 years of industry experience. He holds a BS in Computer Science from BUITEMS.",
+      socials: {
+        linkedin: "https://www.linkedin.com/in/ehtishamahmed/",
+      },
+    },
+    {
+      name: "Ibrar Ali",
+      role: "Full-Stack Developer",
+      image: "/Ibrar.png",
+      description:
+        "Ibrar Ali is a full-stack developer at CARL TECK. He has experience working with startups and has also contributed to projects at DHA Quetta. He completed his BSCS from BUITEMS.",
+      socials: {
+        linkedin: "https://www.linkedin.com/in/ibrarli/",
+      },
+    },
+    {
+      name: "Aqib Jamal",
+      role: "ML Engineer",
+      image: "/Aqib.png",
+      description:
+        "Aqib Jamal is a Machine Learning Engineer at CARL TECK. He has worked on numerous ML projects and holds a BSCS degree from BUITEMS.",
+      socials: {
+        linkedin: "https://www.linkedin.com/in/aqib-jamal-252802289/",
+      },
+    },
+  ],
+  hardware: [
+    {
+      name: "Hamza Anwar",
+      role: "Robotics and AI Engineer",
+      image: "/hamza.png",
+      description:
+        "Hamza Anwar is a Senior Robotics and AI Engineer at CARL TECK with 10 years of industry experience. He holds an MS in Electronics Engineering from BUITEMS",
+      socials: {
+        linkedin: "https://www.linkedin.com/in/hamza-anwar-32454a22b/",
+      },
+    },
+    {
+      name: "Osama Ahmed",
+      role: "Sr. Robotics Engineer",
+      image: "/usama ahmed.png",
+      description:
+        "Osama Ahmed is a Senior Robotics Engineer at CARL TECK. He has worked with PTCL, VIVO, and Elektro Control Industries with 10 years of experience. He holds an MS in Electronics Engineering from BUITEMS.",
+      socials: {
+        linkedin: "https://www.linkedin.com/in/osama-ahmed-1163821a5/",
+      },
+    },
+    {
+      name: "Shahrukh Hussain",
+      role: "Robotics Engineer",
+      image: "/shahrukh.png",
+      description:
+        "Shahrukh Hussain is a Robotics Engineer at CARL TECK. He holds a BS in Electronics Engineering from BUITEMS.",
+      socials: {
+        linkedin: "https://www.linkedin.com/in/shahrukhh442/",
+      },
+    },
+  ],
+};
