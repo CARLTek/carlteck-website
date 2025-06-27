@@ -6,6 +6,7 @@ import OurTeamSection from "../components/about/OurTeamSection";
 import CallToActionSection from "../components/home/CallToActionSection";
 import Footer from "../components/Footer";
 import GalleryPromoSection from "../components/home/GalleryPromoSection";
+import TeamSection from "../components/about/TeamSection";
 
 
 export default function AboutPage() {
@@ -16,6 +17,7 @@ export default function AboutPage() {
       <MissionVisionSection />
       <FounderSection />
       <OurTeamSection />
+      {/*<TeamSection />*/}
       <GalleryPromoSection />
       <CallToActionSection />
       <Footer />
