@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import { ChevronUp, ChevronDown, Megaphone, Code2, Cpu, ChevronLeft, ChevronRight } from "lucide-react";
-import { motion } from "framer-motion";
 
 const teams = {
   marketing: [
@@ -179,11 +178,9 @@ export default function TeamSection() {
           </button>
         </div>
 
-        <motion.div
+        <div
           key={member.name}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
+          
           className="relative group overflow-hidden rounded-xl w-auto h-auto md:w-[600px] md:h-[600px] bg-gray-800 border-2 border-cyan-500 shadow-lg"
         >
           <img
@@ -212,7 +209,7 @@ export default function TeamSection() {
           <div className="absolute inset-0 flex items-center justify-center px-4 text-center text-sm opacity-0 group-hover:opacity-100 transition text-white">
             {member.description}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
