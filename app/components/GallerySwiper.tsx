@@ -34,14 +34,13 @@ export default function GallerySwiper({ media }: GallerySwiperProps) {
               <img
                 src={item.src}
                 alt={`media ${i + 1}`}
-                className="w-full h-96 object-cover rounded-lg"
+                className="w-full h-96 object-contain rounded-lg"
               />
             ) : (
               <video
                 controls
                 preload="metadata"
-                className="w-full h-96 object-cover rounded-lg"
-                poster="/gallery/video-thumb.jpg"
+                className="w-full h-96 object-contain rounded-lg"
               >
                 <source src={item.src + '#t=0.1'} type="video/mp4" />
                 Your browser does not support the video tag.
