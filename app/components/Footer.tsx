@@ -103,11 +103,11 @@ const Footer: React.FC = () => {
                 <div className="flex gap-2">
                   <Phone size={16} />
                   <Link
-                    href={"tel:+923128214978"}
+                    href={"tel:+923475715230"}
                     target="_blank"
                     className="hover:underline"
                   >
-                    <span>+92 312 8214978</span>
+                    <span>+92 347 5715230</span>
                   </Link>
                 </div>
               </div>
