@@ -8,6 +8,9 @@ import "swiper/css/effect-cards";
 import AnimatedButton from "../AnimatedButton";
 
 const galleryImages = [
+  "/gallery/sultanat_1.jpg",
+  "/gallery/sultanat_2.jpg",
+  "/gallery/sultanat_3.jpg",
   "/gallery/3.jpeg",
   "/gallery/4.jpeg",
   "/gallery/2.jpeg",

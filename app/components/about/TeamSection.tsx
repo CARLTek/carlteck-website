@@ -1,31 +1,63 @@
 "use client";
 import { useState } from "react";
-import { ChevronUp, ChevronDown, Megaphone, Code2, Cpu, ChevronLeft, ChevronRight } from "lucide-react";
-import { teams } from "@/app/data";
+import { ChevronUp, ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 
+// Define the team with only the 4 specified members
+const ourTeam = [
+  {
+    name: "Mohammad Aqib Jamal",
+    role: "ML Engineer",
+    image: "/Aqib.png",
+    description:
+      "Aqib Jamal is a Machine Learning Engineer at CARL TECK. He has worked on numerous ML projects and holds a BSCS degree from BUITEMS.",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/aqib-jamal-252802289/",
+    },
+  },
+  {
+    name: "Ehtisham Ahmed",
+    role: "Sr. Full-Stack Engineer",
+    image: "/Ehtisham.png",
+    description:
+      "Ehtisham Ahmed is a Senior Full-Stack Developer at CARL TECK with 5 years of industry experience. He holds a BS in Computer Science from BUITEMS.",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/ehtishamahmed/",
+    },
+  },
+  {
+    name: "Osama Ahmed",
+    role: "Sr. Robotics Engineer",
+    image: "/usama ahmed.png",
+    description:
+      "Osama Ahmed is a Senior Robotics Engineer at CARL TECK. He has worked with PTCL, VIVO, and Elektro Control Industries with 10 years of experience. He holds an MS in Electronics Engineering from BUITEMS.",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/osama-ahmed-1163821a5/",
+    },
+  },
+  {
+    name: "Hamza Anwar",
+    role: "Robotics and AI Engineer",
+    image: "/hamza.png",
+    description:
+      "Hamza Anwar is a Senior Robotics and AI Engineer at CARL TECK with 10 years of industry experience. He holds an MS in Electronics Engineering from BUITEMS",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/hamza-anwar-32454a22b/",
+    },
+  },
+];
 
 export default function TeamSection() {
-  const [activeTeam, setActiveTeam] = useState<
-    "marketing" | "software" | "hardware"
-  >("marketing");
   const [activeIndex, setActiveIndex] = useState(0);
-  const currentTeam = teams[activeTeam];
-  const member = currentTeam[activeIndex];
+  const member = ourTeam[activeIndex];
 
   const handleNext = () => {
-    setActiveIndex((prev) => (prev + 1) % currentTeam.length);
+    setActiveIndex((prev) => (prev + 1) % ourTeam.length);
   };
 
   const handlePrev = () => {
     setActiveIndex(
-      (prev) => (prev - 1 + currentTeam.length) % currentTeam.length
+      (prev) => (prev - 1 + ourTeam.length) % ourTeam.length
     );
-  };
-
-  const teamIcons = {
-    marketing: <Megaphone className="w-5 h-5" />,
-    software: <Code2 className="w-5 h-5" />,
-    hardware: <Cpu className="w-5 h-5" />,
   };
 
   return (
@@ -33,57 +65,34 @@ export default function TeamSection() {
       <div className="w-full lg:w-1/2 text-center lg:text-left ">
         <h2 className="text-4xl font-bold mb-4">Our Team</h2>
         <p className="text-sm mb-15">
-          We’re a group of passionate engineers, developers, and researchers
+          We're a group of passionate engineers, developers, and researchers
           working together to build the future of robotics.
         </p>
-        <div className="flex flex-col gap-4">
-          {(
-            ["marketing", "software", "hardware"] as Array<
-              "marketing" | "software" | "hardware"
-            >
-          ).map((team) => (
-            <button
-              key={team}
-              onClick={() => {
-                setActiveTeam(team);
-                setActiveIndex(0);
-              }}
-              className={`flex items-center gap-10 px-4 py-5 rounded-md border ${
-                activeTeam === team ? "bg-cyan-600" : "border-cyan-600"
-              }`}
-            >
-              <span className="text-black dark:text-white">{teamIcons[team]}</span>
-              <span className="text-left  capitalize ">{team} Team</span>
-            </button>
-          ))}
-        </div>
       </div>
 
       <div className="w-full lg:w-2/3 flex flex-col lg:flex-row items-center justify-end gap-6 relative">
         <div className="flex flex-row lg:flex-col items-center gap-4">
           <button onClick={handlePrev}>
-            <ChevronUp className="hidden lg:block"/>
+            <ChevronUp className="hidden lg:block" />
             <ChevronLeft className="lg:hidden" />
           </button>
           <div className="flex flex-row lg:flex-col gap-2">
-            {currentTeam.map((_, i) => (
+            {ourTeam.map((_, i) => (
               <div
                 key={i}
-                className={`w-2 h-2 rounded-full ${
-                  i === activeIndex ? "bg-cyan-500" : "bg-gray-500 dark:bg-white"
-                }`}
+                className={`w-2 h-2 rounded-full ${i === activeIndex ? "bg-cyan-500" : "bg-gray-500 dark:bg-white"
+                  }`}
               ></div>
             ))}
           </div>
           <button onClick={handleNext}>
-            <ChevronDown className="hidden lg:block"/>
+            <ChevronDown className="hidden lg:block" />
             <ChevronRight className="lg:hidden" />
           </button>
         </div>
 
         <div
           key={member.name}
-          
           className="relative group overflow-hidden rounded-xl w-auto h-auto md:w-[600px] md:h-[600px] bg-gray-800 border-2 border-cyan-500 shadow-lg"
         >
           <img

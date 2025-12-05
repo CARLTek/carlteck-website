@@ -33,12 +33,43 @@ export default function GallerySection() {
     { type: "image", src: "/gallery/ba10.jpeg" },
   ];
 
+  const mediaSet4: { type: "image" | "video"; src: string }[] = [
+    { type: "video", src: "/gallery/sultanat1.mp4" },
+    { type: "image", src: "/gallery/sultanat_1.jpg" },
+    { type: "image", src: "/gallery/sultanat_2.jpg" },
+    { type: "image", src: "/gallery/sultanat_3.jpg" },
+
+  ];
+
   return (
     <div className="px-10 lg:px-20 bg-no-repeat pb-20 dr-screen">
       <PageHeading title="Our Gallery" />
 
-      {/* Section 1 */}
+
+      {/* Section 1 - Sultanat Marque */}
       <div className="flex flex-col lg:flex-row gap-25 lg:gap-10 justify-end items-center pt-30">
+        <div className="w-full lg:w-1/2 space-y-6 text-center lg:text-left">
+          <h2 className="text-3xl font-bold">
+            Ad Rover Live at Cafe Lounge in Sultanat Marque
+          </h2>
+          <p>
+            The Ad Rover has been successfully deployed at Cafe Lounge in Sultanat Marque,
+            creating an innovative and engaging experience for visitors. The robot has attracted
+            significant attention from guests, enhancing the ambiance with interactive advertising
+            and entertainment. This deployment showcases the versatility of our Ad Rover in premium
+            hospitality settings, delivering value to both the venue and its patrons.
+          </p>
+        </div>
+        <div className="w-full lg:w-1/2">
+          <GallerySwiper media={mediaSet4} />
+        </div>
+      </div>
+
+      {/* Section 2 - BA Mall */}
+      <div className="flex flex-col-reverse lg:flex-row gap-25 lg:gap-10 justify-end items-center pt-30">
+        <div className="w-full lg:w-1/2">
+          <GallerySwiper media={mediaSet3} />
+        </div>
         <div className="w-full lg:w-1/2 space-y-6 text-center lg:text-left">
           <h2 className="text-3xl font-bold">
             Ad Rover Live at BA Mall – Positive Engagement and Feedback
@@ -52,16 +83,10 @@ export default function GallerySection() {
             initiative.
           </p>
         </div>
-        <div className="w-full lg:w-1/2">
-          <GallerySwiper media={mediaSet3} />
-        </div>
       </div>
 
-      {/* Section 2 */}
-      <div className="flex flex-col-reverse lg:flex-row gap-25 lg:gap-10 justify-end items-center pt-30">
-        <div className="w-full lg:w-1/2">
-          <GallerySwiper media={mediaSet1} />
-        </div>
+      {/* Section 3 - DHA Central Park */}
+      <div className="flex flex-col lg:flex-row gap-25 lg:gap-10 justify-end items-center pt-30">
         <div className="w-full lg:w-1/2 space-y-6 text-center lg:text-left">
           <h2 className="text-3xl font-bold">
             Ad Rover Deployed at DHA Central Park – Quetta Eats Festival 2025
@@ -73,23 +98,26 @@ export default function GallerySection() {
             showed great interest in our project.
           </p>
         </div>
+        <div className="w-full lg:w-1/2">
+          <GallerySwiper media={mediaSet1} />
+        </div>
       </div>
 
-      {/* Section 3 */}
-      <div className="flex flex-col lg:flex-row gap-25 lg:gap-10 justify-end items-center pt-30">
+      {/* Section 4 - Strategic Discussions */}
+      <div className="flex flex-col-reverse lg:flex-row gap-25 lg:gap-10 justify-end items-center pt-30">
+        <div className="w-full lg:w-1/2">
+          <GallerySwiper media={mediaSet2} />
+        </div>
         <div className="w-full lg:w-1/2 space-y-6 text-center lg:text-left">
           <h2 className="text-3xl font-bold">
             Strategic Discussions and Enhancements in Ad Rover Development
           </h2>
           <p>
-            Highlighting our team’s technical discussions and collaborative
+            Highlighting our team's technical discussions and collaborative
             efforts to improve the Ad Rover. We focused on identifying key
             enhancements, addressing technical challenges, and ensuring the
             system is optimized for real-world deployment and user engagement.
           </p>
-        </div>
-        <div className="w-full lg:w-1/2">
-          <GallerySwiper media={mediaSet2} />
         </div>
       </div>
     </div>
