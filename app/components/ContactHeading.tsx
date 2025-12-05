@@ -14,8 +14,8 @@ const ContactHeading = () => {
     {
       icon: <Phone className="w-5 h-5" />,
       label: "Business Development Manager",
-      value: "+92 304 8332219",
-      link: "tel:+923048332219",
+      value: "+92 347 5715230",
+      link: "tel:+923475715230",
     },
     {
       icon: <Mail className="w-5 h-5" />,
