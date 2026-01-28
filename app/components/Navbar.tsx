@@ -23,7 +23,7 @@ import {
 import { Moon, Sun } from "lucide-react";
 
 const Navbar = () => {
-  const { theme, setTheme } = useTheme(); 
+  const { theme, setTheme } = useTheme();
   const router = useRouter();
 
   const toggleTheme = () => {
@@ -31,11 +31,13 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { label: "Home", href: "/" },
-    { label: "About", href: "/about" },
-    { label: "Products", href: "/products" },
-    { label: "Gallery", href: "/gallery" },
-    { label: "Contact", href: "/contact" },
+    { label: "Home", href: "/", external: false },
+    { label: "About", href: "/about", external: false },
+    { label: "Products", href: "/products", external: false },
+    { label: "Gallery", href: "/gallery", external: false },
+    { label: "Contact", href: "/contact", external: false },
+    { label: "Dashboard", href: "https://dashboard.carlteck.com/", external: true },
+
   ];
 
   return (
@@ -48,7 +50,7 @@ const Navbar = () => {
 
         {/* Right Side */}
         <div className="flex items-center gap-3">
-          
+
 
           {/* Mobile Menu */}
           <div className="md:hidden">
@@ -58,7 +60,13 @@ const Navbar = () => {
                 <MenubarContent align="end" className="z-20">
                   {navLinks.map((item, idx) => (
                     <div key={idx}>
-                      <MenubarItem onClick={() => router.push(item.href)}>
+                      <MenubarItem onClick={() => {
+                        if (item.external) {
+                          window.open(item.href, '_blank', 'noopener,noreferrer');
+                        } else {
+                          router.push(item.href);
+                        }
+                      }}>
                         {item.label}
                       </MenubarItem>
                       {idx < navLinks.length - 1 && <MenubarSeparator />}
@@ -74,9 +82,17 @@ const Navbar = () => {
             <NavigationMenuList>
               {navLinks.map((item, idx) => (
                 <NavigationMenuItem key={idx}>
-                  <NavigationMenuLink asChild>
-                    <Link href={item.href}>{item.label}</Link>
-                  </NavigationMenuLink>
+                  {item.external ? (
+                    <NavigationMenuLink asChild>
+                      <a href={item.href} target="_blank" rel="noopener noreferrer">
+                        {item.label}
+                      </a>
+                    </NavigationMenuLink>
+                  ) : (
+                    <NavigationMenuLink asChild>
+                      <Link href={item.href}>{item.label}</Link>
+                    </NavigationMenuLink>
+                  )}
                 </NavigationMenuItem>
               ))}
             </NavigationMenuList>
@@ -88,7 +104,7 @@ const Navbar = () => {
             <span className="sr-only">Toggle theme</span>
           </Button>
         </div>
-        
+
       </div>
     </nav>
   );
