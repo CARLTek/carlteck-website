@@ -25,7 +25,9 @@ jobs:
             PROJECT_DIR=/root/carlteck-website
 
             cd $PROJECT_DIR
-            git pull origin main
+            git fetch origin
+            git reset --hard origin/main
+            git clean -fd
 
             npm install
             npm run build
