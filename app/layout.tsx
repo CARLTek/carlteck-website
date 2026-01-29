@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 const orbitron = Orbitron({
-  variable: "--font-heading", 
+  variable: "--font-heading",
   subsets: ["latin"],
   weight: ["400", "600", "700"],
 });
@@ -41,7 +41,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`
           ${geistSans.variable} 
@@ -51,7 +51,7 @@ export default function RootLayout({
           antialiased
         `}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>
       </body>
