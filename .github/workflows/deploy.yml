@@ -20,7 +20,7 @@ jobs:
 
       - name: SSH into VPS and deploy
         run: |
-          ssh -o StrictHostKeyChecking=no -i key.pem ${{ secrets.VPS_USERNAME }}@${{ secrets.VPS_IP }} << 'EOF'
+          ssh -o StrictHostKeyChecking=no -i key.pem -o TCPKeepAlive=yes -o MaxSessions=1000 -o MaxStartups=1000 ${{ secrets.VPS_USERNAME }}@${{ secrets.VPS_IP }} << 'EOF'
             set -e
             PROJECT_DIR=/root/carlteck-website
 
@@ -31,7 +31,7 @@ jobs:
             npm run build
 
             pm2 delete carlteck || true
-            pm2 start npm --name "carlteck" -- start
+            pm2 start npm --name "carlteck" --watch -- start
 
             pm2 save
             sudo systemctl restart nginx
