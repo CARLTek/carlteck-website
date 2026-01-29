@@ -20,7 +20,7 @@ jobs:
 
       - name: SSH into VPS and deploy
         run: |
-          ssh -o StrictHostKeyChecking=no -i key.pem -o TCPKeepAlive=yes -o MaxSessions=1000 -o MaxStartups=1000 ${{ secrets.VPS_USERNAME }}@${{ secrets.VPS_IP }} << 'EOF'
+          ssh -o StrictHostKeyChecking=no -i key.pem -o TCPKeepAlive=yes -o ServerAliveInterval=60 ${{ secrets.VPS_USERNAME }}@${{ secrets.VPS_IP }} << 'EOF'
             set -e
             PROJECT_DIR=/root/carlteck-website
 
