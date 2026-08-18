@@ -41,13 +41,47 @@ export default function GallerySection() {
 
   ];
 
+  const mediaSet5: { type: "image" | "video"; src: string }[] = [
+    { type: "image", src: "/gallery/indus-ras-1.jpg" },
+    { type: "image", src: "/gallery/indus-ras-2.jpg" },
+    { type: "image", src: "/gallery/indus-ras-3.jpg" },
+    { type: "image", src: "/gallery/indus-ras-4.jpg" },
+  ];
+
   return (
     <div className="px-10 lg:px-20 bg-no-repeat pb-20 dr-screen">
       <PageHeading title="Our Gallery" />
 
 
-      {/* Section 1 - Sultanat Marque */}
+      {/* Section 1 - Indus RAS Expo 2026 */}
       <div className="flex flex-col lg:flex-row gap-25 lg:gap-10 justify-end items-center pt-30">
+        <div className="w-full lg:w-1/2 space-y-6 text-center lg:text-left">
+          <h2 className="text-3xl font-bold">
+            Indus RAS Expo 2026 Islamabad
+          </h2>
+          <p>
+            Had the privilege of representing the National Centre of Robotics
+            and Automation (NCRA) and the Control Automotive and Robotics Lab
+            (CARL), BUITEMS, at Indus RAS Expo 2026 held in Islamabad. Our
+            team showcased three of our flagship robotic systems: Allen – A
+            modular customer-service robot designed for real-world human-robot
+            interaction. AdRover – An AI-powered autonomous advertising and
+            analytics platform developed for smart retail and commercial
+            environments. Modular Snake Robot – A reconfigurable robotic
+            platform designed for navigating challenging environments and
+            search &amp; rescue research.
+          </p>
+        </div>
+        <div className="w-full lg:w-1/2">
+          <GallerySwiper media={mediaSet5} />
+        </div>
+      </div>
+
+      {/* Section 2 - Sultanat Marque */}
+      <div className="flex flex-col-reverse lg:flex-row gap-25 lg:gap-10 justify-end items-center pt-30">
+        <div className="w-full lg:w-1/2">
+          <GallerySwiper media={mediaSet4} />
+        </div>
         <div className="w-full lg:w-1/2 space-y-6 text-center lg:text-left">
           <h2 className="text-3xl font-bold">
             Ad Rover Live at Cafe Lounge in Sultanat Marque
@@ -60,16 +94,10 @@ export default function GallerySection() {
             hospitality settings, delivering value to both the venue and its patrons.
           </p>
         </div>
-        <div className="w-full lg:w-1/2">
-          <GallerySwiper media={mediaSet4} />
-        </div>
       </div>
 
-      {/* Section 2 - BA Mall */}
-      <div className="flex flex-col-reverse lg:flex-row gap-25 lg:gap-10 justify-end items-center pt-30">
-        <div className="w-full lg:w-1/2">
-          <GallerySwiper media={mediaSet3} />
-        </div>
+      {/* Section 3 - BA Mall */}
+      <div className="flex flex-col lg:flex-row gap-25 lg:gap-10 justify-end items-center pt-30">
         <div className="w-full lg:w-1/2 space-y-6 text-center lg:text-left">
           <h2 className="text-3xl font-bold">
             Ad Rover Live at BA Mall – Positive Engagement and Feedback
@@ -83,10 +111,16 @@ export default function GallerySection() {
             initiative.
           </p>
         </div>
+        <div className="w-full lg:w-1/2">
+          <GallerySwiper media={mediaSet3} />
+        </div>
       </div>
 
-      {/* Section 3 - DHA Central Park */}
-      <div className="flex flex-col lg:flex-row gap-25 lg:gap-10 justify-end items-center pt-30">
+      {/* Section 4 - DHA Central Park */}
+      <div className="flex flex-col-reverse lg:flex-row gap-25 lg:gap-10 justify-end items-center pt-30">
+        <div className="w-full lg:w-1/2">
+          <GallerySwiper media={mediaSet1} />
+        </div>
         <div className="w-full lg:w-1/2 space-y-6 text-center lg:text-left">
           <h2 className="text-3xl font-bold">
             Ad Rover Deployed at DHA Central Park – Quetta Eats Festival 2025
@@ -98,16 +132,10 @@ export default function GallerySection() {
             showed great interest in our project.
           </p>
         </div>
-        <div className="w-full lg:w-1/2">
-          <GallerySwiper media={mediaSet1} />
-        </div>
       </div>
 
-      {/* Section 4 - Strategic Discussions */}
-      <div className="flex flex-col-reverse lg:flex-row gap-25 lg:gap-10 justify-end items-center pt-30">
-        <div className="w-full lg:w-1/2">
-          <GallerySwiper media={mediaSet2} />
-        </div>
+      {/* Section 5 - Strategic Discussions */}
+      <div className="flex flex-col lg:flex-row gap-25 lg:gap-10 justify-end items-center pt-30">
         <div className="w-full lg:w-1/2 space-y-6 text-center lg:text-left">
           <h2 className="text-3xl font-bold">
             Strategic Discussions and Enhancements in Ad Rover Development
@@ -118,6 +146,9 @@ export default function GallerySection() {
             enhancements, addressing technical challenges, and ensuring the
             system is optimized for real-world deployment and user engagement.
           </p>
+        </div>
+        <div className="w-full lg:w-1/2">
+          <GallerySwiper media={mediaSet2} />
         </div>
       </div>
     </div>
